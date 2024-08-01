@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jockey+One&display=swap");
+
+:root {
+  --font-family: "Inter", sans-serif;
+  --second-family: "Jockey One", sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #000;
+  color: #fff;
+}
+
+.scroll-off {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.tooltip {
+  width: 341px;
+  height: 50px;
+  border-radius: 30px;
+  background: #fff;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #060606;
+  font-weight: 600;
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 21;
+  opacity: 0;
+  transition: all 400ms ease;
+
+  @media screen and (max-width: 779px) {
+    top: 22px;
+  }
+
+  span {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    translate: -21px 0;
+  }
+
+  svg {
+    margin-left: 23px;
+  }
+}
+
+.tooltip.visible {
+  display: flex;
+  animation: tooltip-show 400ms linear forwards;
+}
+
+@keyframes tooltip-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
