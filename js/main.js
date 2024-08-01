@@ -37,9 +37,7 @@ document.querySelector("#prev").addEventListener("click", () => {
 
   offset -= slider.firstElementChild.offsetWidth + gap;
 
-  slider.classList.remove("move");
   slider.style.translate = `-${offset}px 0`;
-  setTimeout(() => slider.classList.add("move"));
 
   step -= 1;
 });
@@ -49,9 +47,7 @@ document.querySelector("#next").addEventListener("click", () => {
 
   offset += slider.firstElementChild.offsetWidth + gap;
 
-  slider.classList.remove("move");
   slider.style.translate = `-${offset}px 0`;
-  setTimeout(() => slider.classList.add("move"));
 
   step += 1;
 });
@@ -60,7 +56,5 @@ window.addEventListener("resize", () => {
   if (offset == 0) return;
 
   offset = (slider.firstElementChild.offsetWidth + gap) * (step - 1);
-  slider.classList.remove("move");
   slider.style.translate = `-${offset}px 0`;
-  slider.classList.add("move");
 });
